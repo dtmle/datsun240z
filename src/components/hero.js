@@ -1,15 +1,42 @@
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Hero = () => {
   return (
-    <section className="hero-grid gap-2 h-screen w-screen ">
-      <div className="red-circle col-start-2 col-span-4 row-start-1 row-span-3 mt-20" />
-      <div></div>
-      <div className="col-start-4 col-span-4 row-start-4">
-        <h1 className="text-4xl lg:text-11xl 2xl:text-13xl">Datsun 240z</h1>
+    <section className="h-screen">
+      <div className="grid overflow-hidden lg:grid-cols-4">
+        <div className="red-circle col-start-1 row-start-1 transform translate-x-1/3 xl:translate-x-2/3 mt-5 lg:mt-10"></div>
+        <div className="col-start-1 md:col-span-3 md:col-start-1 lg:col-start-2 lg:col-span-2 row-start-1 self-center transform translate-x-12 lg:translate-x-0">
+          <StaticImage
+            src="../assets/images/datsun-vector.png"
+            alt="Illustrated Datsun 240z"
+          />
+        </div>
+        <div className="px-10 md:px-20 lg:px-10 col-start-1 col-span-4 lg:col-start-2 lg:col-span-3 row-start-1 self-end z-10">
+          <h1 className="text-5xl md:text-9xl lg:text-10xl xl:text-11xl 2xl:text-13xl">
+            Datsun 240z
+          </h1>
+        </div>
       </div>
-      <div className="col-start-4 col-span-3 2xl:col-span-2 row-start-5 row-span-3">
-        <p>
+      <div className="grid md:grid-cols-4 px-10 md:px-20">
+        <div className="text-lg contents">
+          <div className="hidden md:block row-start-1">
+            <p>designed by</p>
+            <p>
+              <em className="font-bold">Yoshihiko Matsuo</em>
+            </p>
+            <p>produced between</p>
+            <p>
+              <em className="font-bold">1969 to 1978</em>
+            </p>
+          </div>
+          <div className="block md:hidden">
+            <p>
+              designed by <em className="font-bold">Yoshihiko Matsuo</em>
+            </p>
+          </div>
+        </div>
+        <p className="md:col-span-4 lg:col-span-3 md:col-start-2">
           The Nissan S30 (sold in Japan as the Nissan Fairlady Z and in other
           markets as the Datsun 240Z, then later as the 260Z and 280Z) is the
           first generation of Z GT 3-door two-seat coupés, produced by Nissan
@@ -18,10 +45,6 @@ const Hero = () => {
           a team led by Yoshihiko Matsuo, the head of Nissan's Sports Car
           Styling Studio.
         </p>
-      </div>
-      <div className="col-start-2 col-span-2 row-start-5">
-        <p>designed by Yoshihiko Matsuo</p>
-        <p>produced between 1969 to 1978</p>
       </div>
     </section>
   );

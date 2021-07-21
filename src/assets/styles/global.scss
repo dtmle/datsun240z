@@ -39,8 +39,9 @@
 /* Breakpoint variables */
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
-$screen-lg-min: 992px;
-$screen-xl-min: 1200px;
+$screen-lg-min: 1024px;
+$screen-xl-min: 1280px;
+$screen-xxl-min: 1536px;
 
 a,
 abbr,
@@ -255,26 +256,34 @@ ol {
   }
 }
 
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+
 .hero-grid {
   display: grid;
 
-  @include xl {
+  @include lg {
     grid-template-columns: 2fr 1fr 1fr 2fr 2fr 2fr 2fr;
-    grid-template-rows: 2fr 2fr 2fr 1fr 1fr 2fr;
   }
 }
 
 .red-circle {
   background-color: #ff3939;
   border-radius: 50%;
-
-  @include sm {
-    height: 66vw;
-    width: 66vw;
-  }
+  height: 70vw;
+  width: 70vw;
+  z-index: 0;
 
   @include xl {
     height: 63vh;
     width: 63vh;
+  }
+
+  @include xxl {
+    height: 70vh;
+    width: 70vh;
   }
 }
