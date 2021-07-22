@@ -266,24 +266,34 @@ ol {
   display: grid;
 
   @include lg {
-    grid-template-columns: 2fr 1fr 1fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr;
   }
 }
 
 .red-circle {
-  background-color: #ff3939;
-  border-radius: 50%;
-  height: 70vw;
-  width: 70vw;
-  z-index: 0;
+  height: 100vw;
+  width: 100vw;
+  position: absolute;
+  transform: translate(30%, -10%);
+
+  // @include md {
+  //   transform: translate(25vw, -10vh);
+  // }
+
+  @include lg {
+    height: 90vw;
+    width: 90vw;
+  }
 
   @include xl {
-    height: 63vh;
-    width: 63vh;
+    height: 70vw;
+    width: 70vw;
+    transform: translate(50%, -25%);
   }
 
   @include xxl {
-    height: 70vh;
-    width: 70vh;
+    height: 60vw;
+    width: 60vw;
+    transform: translate(70%, -40%);
   }
 }
